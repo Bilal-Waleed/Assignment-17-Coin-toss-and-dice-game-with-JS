@@ -7,8 +7,15 @@ function capitalizeFirstLetter(name) {
     return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 }
 
+function getPlayerChoice() {
+    return prompt(player1Name + ", enter 'Head' or 'Tail'").trim().toLowerCase();
+}
+
+function isValidChoice(choice) {
+    return ['head', 'tail'].includes(choice);
+}
+
 function startGame() {
-    // Prompt players for their names only once
     if (!player1Name || !player2Name) {
         player1Name = prompt("Enter Player 1's Name:");
         player2Name = prompt("Enter Player 2's Name:");
@@ -18,22 +25,19 @@ function startGame() {
             return;
         }
 
-        // Capitalize the first letter of both names
         player1Name = capitalizeFirstLetter(player1Name);
         player2Name = capitalizeFirstLetter(player2Name);
 
-        // Update player names in the UI
         document.getElementById('player1NameDisplay').innerText = player1Name;
         document.getElementById('player2NameDisplay').innerText = player2Name;
         document.getElementById('player1NameButton').innerText = player1Name;
         document.getElementById('player2NameButton').innerText = player2Name;
     }
 
-    // Keep asking Player 1 for their toss choice until it's valid
-    let player1Choice = getPlayerChoice();
+    var player1Choice = getPlayerChoice();
     while (!isValidChoice(player1Choice)) {
         displayMessage('Please enter "Head" or "Tail" correctly.');
-        player1Choice = getPlayerChoice(); // Keep asking until it's valid
+        player1Choice = getPlayerChoice();
     }
 
     // Perform the toss
@@ -60,13 +64,6 @@ function startGame() {
     }
 }
 
-function getPlayerChoice() {
-    return prompt(player1Name + ", enter 'Head' or 'Tail'").trim().toLowerCase();
-}
-
-function isValidChoice(choice) {
-    return ['head', 'tail'].includes(choice);
-}
 
 function performToss() {
     var randomValue = Math.random();
