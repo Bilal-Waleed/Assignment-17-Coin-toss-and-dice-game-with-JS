@@ -86,17 +86,17 @@ footer p {
     }
 
     .container {
-        width: 88%; /* Make the container almost full-width */
-        padding: 15px; /* Reduce padding for smaller screens */
+        width: 88%; 
+        padding: 15px; 
     }
 
     .player-section {
-        width: 90%; /* Full width for player sections */
+        width: 90%; 
         padding: 15px;
     }
 
     button {
-        width: auto; /* Remove full width */
+        width: auto; 
         max-width: 90%; /* Set a max width for buttons to avoid stretching */
         padding: 8px;
         font-size: 14px;
