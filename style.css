@@ -39,7 +39,6 @@ button:hover {
     margin-top: 20px;
 }
 
-/* Flexbox to arrange player sections horizontally for larger screens */
 .player-sections {
     display: flex;
     justify-content: space-around;
@@ -47,7 +46,6 @@ button:hover {
     transition: flex-direction 0.3s ease-in-out;
 }
 
-/* Style for each player section */
 .player-section {
     background-color: #f9f9f9;
     padding: 20px;
@@ -66,10 +64,9 @@ footer p {
     font-size: 15px;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
     .container {
-        width: 90%; /* Shrink container width on smaller tablets */
+        width: 90%; 
     }
 
     .player-sections {
