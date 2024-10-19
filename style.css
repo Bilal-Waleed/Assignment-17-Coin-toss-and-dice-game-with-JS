@@ -49,7 +49,7 @@ button:hover {
     padding: 20px;
     border-radius: 10px;
     width: 45%;
-    /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); */
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 #gameStatus {
@@ -76,7 +76,7 @@ footer p {
         flex-direction: column; 
         align-items: center;
     }
-    
+
     body {
         margin-top: 20px;
     }
