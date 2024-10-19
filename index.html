@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Coin Toss & Dice Game</h1>
+
+        <!-- Display toss winner at the top and keep it there -->
+        <h2 id="tossWinnerDisplay"></h2>
+
+        <button id="tossBtn">Toss</button>
+        <p id="tossResult"></p>
+
+        <div id="diceContainer" style="display:none;">
+            <h2 id="turnInfo"></h2>
+
+            <!-- Wrap both player sections in a div for flexbox layout -->
+            <div class="player-sections">
+                <!-- Player 1 Section -->
+                <div class="player-section">
+                    <h3 id="player1NameDisplay">Player 1</h3>
+                    <button id="rollDiceBtnPlayer1">Roll Dice (<span id="player1NameButton">Player 1</span>)</button>
+                    <div class="dice-result">
+                        <p>Dice 1: <span id="player1Dice1">-</span></p>
+                        <p>Dice 2: <span id="player1Dice2">-</span></p>
+                    </div>
+                </div>
+
+                <!-- Player 2 Section -->
+                <div class="player-section">
+                    <h3 id="player2NameDisplay">Player 2</h3>
+                    <button id="rollDiceBtnPlayer2">Roll Dice (<span id="player2NameButton">Player 2</span>)</button>
+                    <div class="dice-result">
+                        <p>Dice 1: <span id="player2Dice1">-</span></p>
+                        <p>Dice 2: <span id="player2Dice2">-</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <p id="gameStatus"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Bilal Waleed. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

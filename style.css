@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin-top: 50px;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 600px; /* Default width for larger screens */
+    margin: 0 auto;
+    transition: width 0.3s ease-in-out;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: width 0.3s ease-in-out;
+}
+
+button:disabled {
+    background-color: #ccc;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.dice-result {
+    margin-top: 20px;
+}
+
+/* Flexbox to arrange player sections horizontally for larger screens */
+.player-sections {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    transition: flex-direction 0.3s ease-in-out;
+}
+
+/* Style for each player section */
+.player-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease-in-out;
+}
+
+#gameStatus {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+footer p {
+    font-size: 15px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Shrink container width on smaller tablets */
+    }
+
+    .player-sections {
+        flex-direction: column; /* Stack the player sections vertically */
+        align-items: center;
+    }
+
+    .player-section {
+        width: 80%; /* Make player sections wider when stacked */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 425px) {
+    body {
+        margin-top: 20px;
+    }
+
+    .container {
+        width: 88%; /* Make the container almost full-width */
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .player-section {
+        width: 90%; /* Full width for player sections */
+        padding: 15px;
+    }
+
+    button {
+        width: auto; /* Remove full width */
+        max-width: 90%; /* Set a max width for buttons to avoid stretching */
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .dice-result p {
+        font-size: 14px; /* Smaller font for dice result */
+    }
+}
+
+@media (max-width: 376px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    h2, h3 {
+        font-size: 16px;
+    }
+
+    button {
+        max-width: 85%; /* Adjust max width for smaller screens */
+        padding: 7px;
+        font-size: 13px;
+    }
+
+    .dice-result p {
+        font-size: 12px;
+    }
+    footer p {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+
+
+    .dice-result p {
+        font-size: 11px;
+    }
+
+    .container {
+        padding: 10px; /* Reduce container padding for smallest screens */
+    }
+}
