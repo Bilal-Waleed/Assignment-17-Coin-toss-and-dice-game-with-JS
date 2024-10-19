@@ -97,13 +97,13 @@ footer p {
 
     button {
         width: auto; 
-        max-width: 90%; /* Set a max width for buttons to avoid stretching */
+        max-width: 90%; 
         padding: 8px;
         font-size: 14px;
     }
 
     .dice-result p {
-        font-size: 14px; /* Smaller font for dice result */
+        font-size: 14px;
     }
 }
 
@@ -117,7 +117,7 @@ footer p {
     }
 
     button {
-        max-width: 85%; /* Adjust max width for smaller screens */
+        max-width: 85%; 
         padding: 7px;
         font-size: 13px;
     }
@@ -138,6 +138,6 @@ footer p {
     }
 
     .container {
-        padding: 10px; /* Reduce container padding for smallest screens */
+        padding: 10px; 
     }
 }
