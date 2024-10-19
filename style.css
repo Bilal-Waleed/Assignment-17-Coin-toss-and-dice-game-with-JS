@@ -71,16 +71,14 @@ footer p {
 }
 
 @media (max-width: 426px) {
+    body {
+        margin-top: 20px;
+    }
 
     .player-sections {
         flex-direction: column; 
         align-items: center;
     }
-
-    body {
-        margin-top: 20px;
-    }
-
     .container {
         width: 88%; 
     }
