@@ -3,7 +3,7 @@ body {
     background-color: #f4f4f4;
     text-align: center;
     margin-top: 50px;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
 }
 
 .container {
@@ -11,7 +11,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: 600px; /* Default width for larger screens */
+    width: 600px;
     margin: 0 auto;
     transition: width 0.3s ease-in-out;
 }
