@@ -14,6 +14,25 @@ function getPlayerChoice() {
 function isValidChoice(choice) {
     return ['head', 'tail'].includes(choice);
 }
+function performToss() {
+    var randomValue = Math.random();
+    return randomValue < 0.5 ? 'Head' : 'Tail';
+}
+
+function displayTossResult(result) {
+    document.getElementById('tossResult').innerText = 'Toss Result: ' + result;
+}
+function displayTurnInfo() {
+    document.getElementById('turnInfo').innerText = currentPlayer + "'s Turn";
+}
+
+function showDiceSection() {
+    document.getElementById('diceContainer').style.display = 'block';
+}
+
+function displayMessage(message) {
+    document.getElementById('tossResult').innerText = message;
+}
 
 function startGame() {
     if (!player1Name || !player2Name) {
@@ -40,63 +59,23 @@ function startGame() {
         player1Choice = getPlayerChoice();
     }
 
-    // Perform the toss
     var tossResult = performToss();
     displayTossResult(tossResult);
 
     tossWinner = (player1Choice === tossResult) ? player1Name : player2Name;
     currentPlayer = tossWinner;
 
-    // Display the toss winner's name once at the top and don't change it
     document.getElementById('tossWinnerDisplay').innerText = "Toss Winner: " + tossWinner;
 
     displayTurnInfo();
     showDiceSection();
 
-    // Disable the toss button after the toss
     document.getElementById('tossBtn').disabled = true;
 
-    // Disable the non-toss-winning player's roll button
     if (tossWinner === player1Name) {
         document.getElementById('rollDiceBtnPlayer2').disabled = true;
     } else {
         document.getElementById('rollDiceBtnPlayer1').disabled = true;
-    }
-}
-
-
-function performToss() {
-    var randomValue = Math.random();
-    return randomValue < 0.5 ? 'head' : 'tail';
-}
-
-function displayTossResult(result) {
-    document.getElementById('tossResult').innerText = 'Toss Result: ' + result.toUpperCase();
-}
-
-function displayTurnInfo() {
-    document.getElementById('turnInfo').innerText = currentPlayer + "'s Turn";
-}
-
-function showDiceSection() {
-    document.getElementById('diceContainer').style.display = 'block';
-}
-
-function rollDice(player) {
-    if (player !== currentPlayer) {
-        return; // Ignore if it's not the current player's turn
-    }
-
-    var dice1 = rollSingleDice();
-    var dice2 = rollSingleDice();
-    displayDiceResults(player, dice1, dice2);
-
-    // Check for win immediately after the roll
-    if (checkForWin(dice1, dice2)) {
-        endGame(player);
-    } else {
-        // Switch to the other player after the current player's turn
-        switchPlayer();
     }
 }
 
@@ -115,15 +94,14 @@ function displayDiceResults(player, dice1, dice2) {
 }
 
 function checkForWin(dice1, dice2) {
-    return dice1 === 6 && dice2 === 6;  // Win condition: both dice show 6
+    return dice1 === 6 && dice2 === 6; 
 }
 
 function endGame(player) {
     document.getElementById('gameStatus').innerText = player + " wins! Both dice rolled 6!";
     document.getElementById('rollDiceBtnPlayer1').disabled = true;
     document.getElementById('rollDiceBtnPlayer2').disabled = true;
-    // Re-enable the toss button after the game ends
-    document.getElementById('tossBtn').disabled = false;
+    // document.getElementById('tossBtn').disabled = false;
 }
 
 function switchPlayer() {
@@ -136,12 +114,22 @@ function switchPlayer() {
         document.getElementById('rollDiceBtnPlayer1').disabled = false;
         document.getElementById('rollDiceBtnPlayer2').disabled = true;
     }
-
-    displayTurnInfo(); // Update the turn display after switching
+    displayTurnInfo(); 
 }
 
-function displayMessage(message) {
-    document.getElementById('tossResult').innerText = message;
+function rollDice(player) {
+    if (player !== currentPlayer) {
+        return; 
+    }
+    var dice1 = rollSingleDice();
+    var dice2 = rollSingleDice();
+    displayDiceResults(player, dice1, dice2);
+
+    if (checkForWin(dice1, dice2)) {
+        endGame(player);
+    } else {
+        switchPlayer();
+    }
 }
 
 document.getElementById('tossBtn').addEventListener('click', startGame);
