@@ -3,17 +3,15 @@ body {
     background-color: #f4f4f4;
     text-align: center;
     margin-top: 50px;
-    overflow-x: hidden;
 }
 
 .container {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 600px;
     margin: 0 auto;
-    transition: width 0.3s ease-in-out;
 }
 
 button {
@@ -24,7 +22,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: width 0.3s ease-in-out;
+
 }
 
 button:disabled {
@@ -43,7 +41,6 @@ button:hover {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
-    transition: flex-direction 0.3s ease-in-out;
 }
 
 .player-section {
@@ -52,7 +49,6 @@ button:hover {
     border-radius: 10px;
     width: 45%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: width 0.3s ease-in-out;
 }
 
 #gameStatus {
